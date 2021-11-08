@@ -1,4 +1,4 @@
-package arturz.springjspblog.controller;
+package arturz.springjspblog.controllers;
 
 
 import org.springframework.stereotype.Controller;
