@@ -21,6 +21,8 @@
     <h5>SpringBoot 2.5</h5>
     <h5>JSP</h5>
     <h5>PostgreSQL</h5>
+    <h5>Bootstrap CSS</h5>
+    <h5>Maven</h5>
 </div>
 <footer class="text-muted">
     <div class="container">
