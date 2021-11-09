@@ -1,1 +1,1 @@
-web: java -war target/SpringJSPBlog-0.0.1-SNAPSHOT.war
+web: java -jar target/SpringJSPBlog-0.0.1-SNAPSHOT.war
