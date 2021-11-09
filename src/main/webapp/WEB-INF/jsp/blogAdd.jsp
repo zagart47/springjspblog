@@ -11,21 +11,22 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="UTF-8">
-    <title>Мой блог</title>
+    <title>Добавить новость</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 </head>
 <body>
 <header>
     <jsp:include page="blocks/header.jsp"/>
 </header>
-<div class="container mt-5">
-    <h1>Мой блог</h1>
-    <div class="alert alert-info mt-2"><% Iterable<Post> posts = (Iterable<Post>) request.getAttribute("posts");
-        for (Post post: posts) { %>
-            <h3> <% out.println(post.getFullText()); %> </h3>
-            <p> <% out.println(post.getAnons());%> </p>
-            <a href="/blog/<% String link = String.valueOf(post.getId()); out.print(link); %>" class="btn btn-warning">Детальнее</a> <% } %>
-    </div>
+<div class="container mt-5 mb-5">
+    <h1>Добавить новость</h1>
+    <form action="/blog/add" method="post">
+        <input type="text" name="title" placeholder="Введите название статьи" class="form-control"><br>
+        <input type="text" name="anons" placeholder="Введите анонс статьи" class="form-control"><br>
+        <textarea name="fullText" placeholder="Введите полный текст статьи" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Добавить статью</button>
+    </form>
+
 </div>
 <footer class="text-muted">
     <div class="container">

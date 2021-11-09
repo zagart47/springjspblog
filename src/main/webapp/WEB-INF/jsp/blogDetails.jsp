@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="arturz.springjspblog.models.Post" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE HTML>
 <head>
     <meta charset="UTF-8">
@@ -19,12 +20,10 @@
     <jsp:include page="blocks/header.jsp"/>
 </header>
 <div class="container mt-5">
-    <h1>Мой блог</h1>
-    <div class="alert alert-info mt-2"><% Iterable<Post> posts = (Iterable<Post>) request.getAttribute("posts");
-        for (Post post: posts) { %>
-            <h3> <% out.println(post.getFullText()); %> </h3>
-            <p> <% out.println(post.getAnons());%> </p>
-            <a href="/blog/<% String link = String.valueOf(post.getId()); out.print(link); %>" class="btn btn-warning">Детальнее</a> <% } %>
+    <div class="alert alert-info mt-2"><% ArrayList<Post> res = (ArrayList<Post>) request.getAttribute("res");
+        long id = (long) request.getAttribute("id");
+        out.println(res.get((int) id));
+        %>
     </div>
 </div>
 <footer class="text-muted">
