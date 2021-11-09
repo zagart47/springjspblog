@@ -14,16 +14,18 @@
 </head>
 <body>
 <header>
-    <jsp:include page="blocks/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 </header>
 <div class="container mt-5">
-    <h1>Добро пожаловать!</h1>
-    <h2>Здесь можно оставлять свои новости и заметки.</h2>
+    <h4>Стек применяемых технологий:</h4>
+    <h5>SpringBoot 2.5</h5>
+    <h5>JSP</h5>
+    <h5>PostgreSQL</h5>
 </div>
 <footer class="text-muted">
     <div class="container">
         <p class="float-right"></p>
-        <jsp:include page="blocks/footer.jsp"/>
+        <jsp:include page="footer.jsp"/>
     </div>
 </footer>
 </body>

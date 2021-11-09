@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Artur
@@ -11,30 +12,29 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="UTF-8">
-    <title>Мой блог</title>
+    <title>Редактировать статью</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 </head>
 <body>
 <header>
     <jsp:include page="header.jsp"/>
 </header>
-<div class="container mt-5">
-    <div class="alert alert-info mt-2">
+<div class="container mt-5 mb-5">
+    <h1>Редактировать статью</h1>
+    <form method="post">
         <% ArrayList<Post> res = (ArrayList<Post>) request.getAttribute("post");
             for (Post post: res) {
                 String title = post.getTitle();
                 String fullText = post.getFullText();
-                int views = post.getViews();
-                long id = post.getId();%>
-                <h3><%=title%></h3>
-                <h6><%=fullText%></h6>
-                <h7>Просмотров: <%=views%></h7><br><br>
-        <a href="/blog/<%=id%>/edit" class="btn btn-warning">Редактировать</a><br><br>
-        <form action="/blog/<%=id%>/remove" method="post">
-            <button class="btn btn-warning" type="submit">Удалить</button>
-        </form>
-        <%} %>
-    </div>
+                String anons = post.getAnons();
+                %>
+        <input type="text" value="<%=title%>" name="title" placeholder="Введите название статьи" class="form-control"><br>
+        <input type="text" value="<%=anons%>" name="anons" placeholder="Введите анонс статьи" class="form-control"><br>
+        <textarea name="fullText" placeholder="Введите полный текст статьи" class="form-control"><%=fullText%></textarea><br>
+        <button type="submit" class="btn btn-success">Обновить статью</button>
+        <%}%>
+    </form>
+
 </div>
 <footer class="text-muted">
     <div class="container">

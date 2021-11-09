@@ -16,20 +16,22 @@
 </head>
 <body>
 <header>
-    <jsp:include page="blocks/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 </header>
 <div class="container mt-5">
     <h1>Мой блог</h1>
     <div class="alert alert-info mt-2"><% Iterable<Post> posts = (Iterable<Post>) request.getAttribute("posts");
-        for (Post post: posts) { %>
-            <h3> <% out.println(post.getFullText()); %> </h3>
-            <p> <% out.println(post.getAnons());%> </p>
-            <a href="/blog/<% String link = String.valueOf(post.getId()); out.print(link); %>" class="btn btn-warning">Детальнее</a> <% } %>
+        for (Post post: posts) {
+            String title = post.getTitle();
+            String anons = post.getAnons();%>
+            <h3> <%=title%></h3>
+            <h6> <%=anons%></h6>
+            <a href="/blog/<% long link = post.getId(); out.print(link); %>" class="btn btn-warning">Детальнее</a> <% } %>
     </div>
 </div>
 <footer class="text-muted">
     <div class="container">
-        <jsp:include page="blocks/footer.jsp"/>
+        <jsp:include page="footer.jsp"/>
     </div>
 </footer>
 </body>

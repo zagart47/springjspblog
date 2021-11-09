@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-    <jsp:include page="blocks/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 </header>
 <div class="container mt-5 mb-5">
     <h1>Добавить новость</h1>
@@ -30,7 +30,7 @@
 </div>
 <footer class="text-muted">
     <div class="container">
-        <jsp:include page="blocks/footer.jsp"/>
+        <jsp:include page="footer.jsp"/>
     </div>
 </footer>
 </body>

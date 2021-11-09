@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <jsp:include page="blocks/header.jsp"/>
+    <jsp:include page="header.jsp"/>
 </header>
 <div class="container mt-5">
     <h1>Добро пожаловать!</h1>
@@ -23,7 +23,7 @@
 <footer class="text-muted">
     <div class="container">
         <p class="float-right"></p>
-        <jsp:include page="blocks/footer.jsp"/>
+        <jsp:include page="footer.jsp"/>
     </div>
 </footer>
 </body>
